@@ -46,12 +46,20 @@ prédictif des prix de vente.
   -Modèle Random Forest : R² = 0.44 après optimisation
   (target encoding, log transformation, feature surface/pièce)
 
-🤖 Modèle Prédictif
+🤖 Modèle Prédictif (avant cross validation)
 
 - Algorithme : Random Forest Regressor
 - Feature engineering : ratio surface/pièce, target encoding
   des départements, log transformation du prix
 - Résultat : R² = 0.44 sur le jeu de test
+
+  🤖 Modèle Prédictif (après cross validation)
+
+- Algorithme : Random Forest Regressor (200 arbres, max_depth=15)
+- Validation : Cross-validation 5 folds
+- R² moyen : 0.619 ± 0.007
+- Feature engineering clé : target encoding département/commune,
+  log transformation du prix, ratio surface/pièce
 
 📥 Données brutes
 
